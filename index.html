@@ -382,7 +382,7 @@
     
     #inicio #horizontalCarousel .carousel-item img {
         width: 100%;
-        height: 500px; /* Ajusta esta altura según necesites */
+        height: 350px; /* Ajusta esta altura según necesites */
         object-fit: cover;
     }
     
@@ -394,6 +394,26 @@
         transform: translateY(-50%);
         background-color: rgba(0, 0, 0, 0.3);
     }
+    .testimonial-img-container {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto; /* Centrar el contenedor */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease; /* Animación en hover */
+}
+
+.testimonial-img-container:hover {
+    transform: scale(1.05); /* Efecto de agrandar ligeramente al pasar el mouse */
+}
+
+.testimonial-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
         </style>
     </head>
@@ -402,7 +422,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(8px);">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="assets/imagenes/sistemas-blanco.png" alt="" height="30" class="d-inline-block align-top me-2">
+                <img src="imagenes/16.png" alt="" height="30" class="d-inline-block align-top me-2">
                 VIBEN
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -498,14 +518,14 @@
     <div class="col-md-6 mb-4 mb-md-0">  <!-- Añadí mb-4 mb-md-0 -->
         <div class="mission-vision pe-md-4">  <!-- Añadí pe-md-4 -->
             <h3><i class="fas fa-bullseye me-2"></i>Nuestra Misión</h3>
-            <p>Ofrecer soluciones inmobiliarias integrales con honestidad, transparencia y profesionalismo, superando las expectativas de nuestros clientes.</p>
+            <p>Crear espacios temáticos innovadores donde las familias vivan experiencias únicas mientras generan un impacto positivo en su comunidad y el planeta.</p>
         </div>
     </div>
   
     <div class="col-md-6">
         <div class="mission-vision ps-md-4">  <!-- Añadí ps-md-4 -->
             <h3><i class="fas fa-eye me-2"></i>Nuestra Visión</h3>
-            <p>Ser reconocidos como la inmobiliaria líder en la región, destacando por nuestra innovación, servicio personalizado y contribución al desarrollo sostenible.</p>
+            <p>Ser líder global en proveer espacios temáticos, reconocidos por la excelencia y la mejor experiencia al cliente.</p>
         </div>
     </div>
 </div>
@@ -520,21 +540,21 @@
                                         <i class="fas fa-medal"></i>
                                     </div>
                                     <h5>Experiencia</h5>
-                                    <p>Más de 5 años en el mercado inmobiliario local</p>
+                                    <p>3 años en el mercado inmobiliario local</p>
                                 </div>
                                 <div class="col-md-4 mb-4">
                                     <div class="feature-icon">
                                         <i class="fas fa-users"></i>
                                     </div>
                                     <h5>Clientes Satisfechos</h5>
-                                    <p>+100 transacciones exitosas</p>
+                                    <p>+200 clientes</p>
                                 </div>
                                 <div class="col-md-4 mb-4">
                                     <div class="feature-icon">
                                         <i class="fas fa-hand-holding-heart"></i>
                                     </div>
-                                    <h5>Compromiso Social</h5>
-                                    <p>Iniciativas para el desarrollo comunitario</p>
+                                    <h5>Proyectos</h5>
+                                    <p>3 proyectos desarrollados</p>
                                 </div>
                             </div>
                         </div>
@@ -557,8 +577,14 @@
                         <img src="imagenes/17.jpg" class="card-img-top" alt="Casa moderna">
                         <div class="card-body">
                             <h5 class="card-title">Eco Wari Resort</h5>
-                            <p class="text-purple fw-bold">$10,000</p>
-                            <p class="card-text">   
+                
+                            <!-- Precio original tachado + nuevo precio -->
+                            <p class="mb-2">
+                                <span class="text-muted text-decoration-line-through">S/30,000</span>
+                                <span class="text-purple fw-bold ms-2">S/27,000</span>
+                            </p>
+                
+                            <p class="card-text">
                                 <i class="fas fa-map-marker-alt text-muted me-2"></i>Quinua
                             </p>
                             <hr>
@@ -573,30 +599,35 @@
                                 </div>
                                 <div>
                                     <i class="fas fa-ruler-combined text-muted"></i>
-                                    <p class="mb-0">1000 m²</p>
+                                    <p class="mb-0">400 m²</p>
                                 </div>
                             </div>
                         </div>
                         <div class="card-footer bg-transparent">
                             <a href="https://wa.link/qug8g6" class="btn btn-success w-100" target="_blank">
-    <i class="fab fa-whatsapp me-2"></i> Consultar
-</a>
-                                
+                                <i class="fab fa-whatsapp me-2"></i> Consultar
                             </a>
                         </div>
                     </div>
                 </div>
+                
                 
                 <!-- Propiedad 2 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card property-card h-100">
-                        <div class="badge bg-success position-absolute" style="top: 10px; right: 10px;">Venta</div>
-                        <img src="imagenes/17.jpg" class="card-img-top" alt="Apartamento">
+                        <div class="badge bg-danger position-absolute" style="top: 10px; right: 10px;">Venta</div>
+                        <img src="imagenes/17.jpg" class="card-img-top" alt="Casa moderna">
                         <div class="card-body">
-                            <h5 class="card-title">Quinua</h5>
-                            <p class="text-purple fw-bold">$10,000</p>
+                            <h5 class="card-title">Eco Wari Resort</h5>
+                
+                            <!-- Precio original tachado + nuevo precio -->
+                            <p class="mb-2">
+                                <span class="text-muted text-decoration-line-through">S/30,000</span>
+                                <span class="text-purple fw-bold ms-2">S/27,000</span>
+                            </p>
+                
                             <p class="card-text">
-                                <i class="fas fa-map-marker-alt text-muted me-2"></i>Centro, Ciudad
+                                <i class="fas fa-map-marker-alt text-muted me-2"></i>Quinua
                             </p>
                             <hr>
                             <div class="d-flex justify-content-between text-center">
@@ -610,35 +641,38 @@
                                 </div>
                                 <div>
                                     <i class="fas fa-ruler-combined text-muted"></i>
-                                    <p class="mb-0">1000 m²</p>
+                                    <p class="mb-0">400 m²</p>
                                 </div>
                             </div>
                         </div>
                         <div class="card-footer bg-transparent">
                             <a href="https://wa.link/qug8g6" class="btn btn-success w-100" target="_blank">
-    <i class="fab fa-whatsapp me-2"></i> Consultar
-</a>
+                                <i class="fab fa-whatsapp me-2"></i> Consultar
+                            </a>
                         </div>
                     </div>
                 </div>
                 
+                
                 <!-- Propiedad 3 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card property-card h-100">
-                        <div class="badge bg-warning text-dark position-absolute" style="top: 10px; right: 10px;">Pre-venta</div>
-                        <img src="imagenes/17.jpg" class="card-img-top" alt="Terreno">
+                        <div class="badge bg-danger position-absolute" style="top: 10px; right: 10px;">Venta</div>
+                        <img src="imagenes/17.jpg" class="card-img-top" alt="Casa moderna">
                         <div class="card-body">
-                            <h5 class="card-title">Quinua</h5>
-                            <p class="text-purple fw-bold">$10,000</p>
+                            <h5 class="card-title">Eco Wari Resort</h5>
+                
+                            <!-- Precio original tachado + nuevo precio -->
+                            <p class="mb-2">
+                                <span class="text-muted text-decoration-line-through">S/30,000</span>
+                                <span class="text-purple fw-bold ms-2">S/27,000</span>
+                            </p>
+                
                             <p class="card-text">
                                 <i class="fas fa-map-marker-alt text-muted me-2"></i>Quinua
                             </p>
                             <hr>
                             <div class="d-flex justify-content-between text-center">
-                                <div>
-                                    <i class="fas fa-vector-square text-muted"></i>
-                                    <p class="mb-0">1,200 m²</p>
-                                </div>
                                 <div>
                                     <i class="fas fa-tint text-muted"></i>
                                     <p class="mb-0">Agua</p>
@@ -647,18 +681,20 @@
                                     <i class="fas fa-bolt text-muted"></i>
                                     <p class="mb-0">Electricidad</p>
                                 </div>
+                                <div>
+                                    <i class="fas fa-ruler-combined text-muted"></i>
+                                    <p class="mb-0">400 m²</p>
+                                </div>
                             </div>
                         </div>
                         <div class="card-footer bg-transparent">
-                           <a href="https://wa.link/qug8g6" class="btn btn-success w-100" target="_blank">
-    <i class="fab fa-whatsapp me-2"></i> Consultar
-</a>
-                                
+                            <a href="https://wa.link/qug8g6" class="btn btn-success w-100" target="_blank">
+                                <i class="fab fa-whatsapp me-2"></i> Consultar
                             </a>
                         </div>
                     </div>
                 </div>
-            </div>
+                
             
             <div class="text-center mt-4">
                 <a href="#" class="btn btn-outline-primary px-4">Ver más propiedades</a>
@@ -668,13 +704,15 @@
             <section class="mt-5 py-5">
                 <h2 class="section-title text-center">Lo que dicen nuestros clientes</h2>
                 <p class="text-center mb-5">Testimonios de clientes satisfechos con nuestros servicios</p>
-                
+            
                 <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <!-- Reseña 1 -->
                         <div class="carousel-item active">
                             <div class="testimonial-card text-center">
-                                <img src="imagenes/7.jpg" class="rounded-circle mb-3" width="100" alt="Cliente">
+                                <div class="testimonial-img-container mb-3">
+                                    <img src="imagenes/24.jpg" alt="Cliente">
+                                </div>
                                 <h5>María Gómez</h5>
                                 <div class="mb-3">
                                     <i class="fas fa-star text-warning"></i>
@@ -686,10 +724,13 @@
                                 <p class="mb-0">"Excelente servicio, encontré mi casa soñada gracias a VIBEN. El equipo fue muy profesional y atento en todo momento."</p>
                             </div>
                         </div>
+            
                         <!-- Reseña 2 -->
                         <div class="carousel-item">
                             <div class="testimonial-card text-center">
-                                <img src="imagenes/8.jpg" class="rounded-circle mb-3" width="100" alt="Cliente">
+                                <div class="testimonial-img-container mb-3">
+                                    <img src="imagenes/25.jpg" alt="Cliente">
+                                </div>
                                 <h5>Carlos Rodríguez</h5>
                                 <div class="mb-3">
                                     <i class="fas fa-star text-warning"></i>
@@ -698,13 +739,16 @@
                                     <i class="fas fa-star text-warning"></i>
                                     <i class="fas fa-star-half-alt text-warning"></i>
                                 </div>
-                                <p class="mb-0">"Vendí mi propiedad en tiempo récord y al mejor precio. Los recomiendo 100%, son expertos en el mercado inmobiliario."</p>
+                                <p class="mb-0">"¡Compré mi terreno soñado! Excelente asesoría y trámites fáciles. Ahora tengo donde construir mi futuro. ¡100% recomendados!"</p>
                             </div>
                         </div>
+            
                         <!-- Reseña 3 -->
                         <div class="carousel-item">
                             <div class="testimonial-card text-center">
-                                <img src="imagenes/9.jpg" class="rounded-circle mb-3" width="100" alt="Cliente">
+                                <div class="testimonial-img-container mb-3">
+                                    <img src="imagenes/26.jpg" alt="Cliente">
+                                </div>
                                 <h5>Laura Fernández</h5>
                                 <div class="mb-3">
                                     <i class="fas fa-star text-warning"></i>
@@ -716,7 +760,27 @@
                                 <p class="mb-0">"La asesoría legal que brindan es invaluable. Me guiaron en todo el proceso de compra sin problemas. ¡Gracias VIBEN!"</p>
                             </div>
                         </div>
+            
+                        <!-- Nueva Reseña 4 -->
+                        <div class="carousel-item">
+                            <div class="testimonial-card text-center">
+                                <div class="testimonial-img-container mb-3">
+                                    <img src="imagenes/27.jpg" alt="Cliente">
+                                </div>
+                                <h5>Andrés Salazar</h5>
+                                <div class="mb-3">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                                <p class="mb-0">"Increíble experiencia de principio a fin. VIBEN me ayudó a encontrar la propiedad perfecta para mi familia. ¡Totalmente recomendados!"</p>
+                            </div>
+                        </div>
                     </div>
+            
+                    <!-- Controles del carrusel -->
                     <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Anterior</span>
@@ -727,6 +791,8 @@
                     </button>
                 </div>
             </section>
+            
+            
             
             <!-- Sección de Lugares Turísticos -->
             <section class="mt-5 py-5">
@@ -768,37 +834,31 @@
         </section>
 
         <!-- Nuestros servicios -->
-        <section id="servicios" class="bg-light py-5">
+        <section id="servicios" class="bg-light py-5"> 
             <div class="container">
                 <h2 class="text-center mb-5">Nuestros Servicios</h2>
                 
-                <div class="row g-4">
-                    <div class="col-md-4 text-center">
-                        <div class="feature-icon">
-                            <i class="fas fa-home"></i>
-                        </div>
-                        <h4>Compra de Propiedades</h4>
-                        <p>Te ayudamos a encontrar la casa de tus sueños con nuestro amplio catálogo y asesoría especializada.</p>
-                    </div>
-                    
-                    <div class="col-md-4 text-center">
-                        <div class="feature-icon">
-                            <i class="fas fa-hand-holding-usd"></i>
+                <div class="row justify-content-center">
+                    <div class="col-md-4 text-center mb-4">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-hand-holding-usd"></i> <!-- Icono en tamaño normal -->
                         </div>
                         <h4>Venta de Propiedades</h4>
                         <p>Maximiza el valor de tu propiedad con nuestra red de clientes y estrategias de marketing.</p>
                     </div>
                     
-                    <div class="col-md-4 text-center">
-                        <div class="feature-icon">
-                            <i class="fas fa-file-signature"></i>
+                    <div class="col-md-4 text-center mb-4">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-file-signature"></i> <!-- Icono en tamaño normal -->
                         </div>
-                        <h4>Asesoría Legal</h4>
-                        <p>Nuestros abogados especializados te acompañan en todo el proceso de compra/venta.</p>
+                        <h4>Asesoría en Inversiones</h4>
+                        <p>Invertimos nuestro tiempo en tu éxito, para que tú puedas invertir tu dinero con confianza.</p>
                     </div>
                 </div>
             </div>
         </section>
+        
+        
 
         <!-- Footer -->
         <footer id="contacto" class="text-white py-4">
