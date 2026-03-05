@@ -17,125 +17,209 @@
   <link rel="icon" href="imagenes/logo-c.png?v=2" type="image/png">
   <link rel="shortcut icon" href="imagenes/logo-c.png?v=2" type="image/png">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     :root{
+      /* Premium ALT */
       --alt-gold:#C6A96B;
-      --alt-black:#1b1b1b;
-      --alt-soft:#f7f7f7;
-      --alt-gray:#6b6b6b;
-      --white:#ffffff;
-      --google-blue:#1a73e8;
 
-      /* Reuso Viben */
+      /* Viben accents */
       --viben-green:#76c043;
       --viben-orange:#f37021;
-      --viben-dark:#333333;
-      --text-gray:#666666;
-      --bg-light:#f8f9fa;
+
+      /* DARK THEME (IGUAL INDEX) */
+      --bg:#0b0a12;
+      --panel:#111125;
+      --panel2:#0f1020;
+
+      --text:#e9e7ff;
+      --muted:#b3b0d4;
+
+      --border:rgba(255,255,255,.10);
+      --shadow:0 18px 55px rgba(0,0,0,.45);
+      --shadow2:0 26px 90px rgba(0,0,0,.55);
+
+      --ring:rgba(122,92,255,.30);
+      --accent1:#7a5cff; /* morado */
+      --accent2:#2dd4bf; /* teal */
+
+      --google-blue:#1a73e8;
+      --white:#ffffff;
     }
 
+    *{box-sizing:border-box}
+    html,body{scroll-behavior:smooth}
     body{
       font-family:'Poppins', sans-serif;
-      background-color: var(--alt-soft);
-      color: var(--alt-black);
+      background:
+        radial-gradient(900px 520px at 12% 0%, rgba(122,92,255,.18), transparent 60%),
+        radial-gradient(900px 520px at 92% 5%, rgba(45,212,191,.10), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.02), transparent 40%),
+        var(--bg);
+      color:var(--text);
       overflow-x:hidden;
     }
 
-    /* Navbar */
+    /* Navbar (dark glass, igual index vibe) */
     .navbar{
-      background-color: var(--white) !important;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-      padding: 15px 0;
+      background: rgba(15,16,32,.78) !important;
+      backdrop-filter: blur(12px);
+      border-bottom:1px solid rgba(255,255,255,.10);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      padding: 14px 0;
     }
     .navbar-brand img{max-height:55px; width:auto;}
+    .navbar-toggler{
+      border:1px solid rgba(255,255,255,.18) !important;
+      border-radius:14px;
+      padding:.55rem .75rem;
+    }
+    .navbar-toggler .fa-bars{color:#fff}
     .navbar-nav .nav-link{
-      color: var(--alt-black) !important;
-      font-weight: 500;
+      color: rgba(255,255,255,.88) !important;
+      font-weight:800;
       text-transform: uppercase;
       margin-left: 20px;
       letter-spacing: .4px;
     }
-    .navbar-nav .nav-link:hover{color: var(--alt-gold) !important;}
+    .navbar-nav .nav-link:hover{ color: var(--accent2) !important; }
+    .navbar-nav .nav-link.active{ color:#fff !important; position:relative; }
+    .navbar-nav .nav-link.active::after{
+      content:"";
+      position:absolute;
+      left:0; right:0;
+      bottom:-8px;
+      height:2px;
+      background: linear-gradient(90deg, var(--accent1), var(--accent2));
+      border-radius:999px;
+    }
 
     /* Header */
     .property-header{
-      background: linear-gradient(180deg, #ffffff, #fbfbfb);
-      padding: 42px 0;
-      border-bottom: 1px solid #eee;
+      background:
+        radial-gradient(900px 480px at 20% 0%, rgba(122,92,255,.16), transparent 62%),
+        radial-gradient(900px 480px at 90% 10%, rgba(45,212,191,.08), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.03), transparent 60%),
+        var(--panel2);
+      padding: 44px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
+
     .badge-altamira{
       background: rgba(198,169,107,.16);
-      color: #7a6230;
-      border: 1px solid rgba(198,169,107,.35);
-      font-weight: 700;
-      letter-spacing: .4px;
+      color: rgba(255,235,200,.95);
+      border: 1px solid rgba(198,169,107,.28);
+      font-weight: 900;
+      letter-spacing: .6px;
       text-transform: uppercase;
     }
+
+    .title-altamira{
+      letter-spacing: .8px;
+      font-family:'Montserrat', sans-serif;
+      font-weight: 900;
+    }
+
+    .lead.text-muted{ color: var(--muted) !important; }
+    .text-muted{ color: var(--muted) !important; }
 
     /* Carrusel */
     .property-carousel img{
       height: 500px;
       object-fit: cover;
-      border-radius: 10px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: 0 18px 55px rgba(0,0,0,.45);
+    }
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon{
+      filter: drop-shadow(0 8px 18px rgba(0,0,0,.55));
     }
 
-    /* Cards */
+    /* Cards (glass) */
     .soft-card{
-      background: var(--white);
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
     }
 
     /* Sidebar sticky */
     .sidebar-card{
-      background: var(--white);
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.10);
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
       position: sticky;
       top: 100px;
-      border: 1px solid rgba(198,169,107,.12);
     }
 
-    /* Botón WhatsApp */
+    /* List group (dark) */
+    .list-group-item{
+      background: transparent !important;
+      border-color: rgba(255,255,255,.08) !important;
+      color: rgba(255,255,255,.90) !important;
+    }
+
+    /* Botón WhatsApp (misma onda index) */
     .btn-whatsapp-prop{
-      background-color: var(--alt-gold);
-      color: #1a1a1a;
+      background: linear-gradient(90deg, var(--accent1), var(--accent2));
+      color: #fff;
       border: none;
-      font-weight: 700;
+      font-weight: 900;
       padding: 12px;
       transition: all .25s ease;
+      box-shadow: 0 12px 26px rgba(122,92,255,.22);
     }
     .btn-whatsapp-prop:hover{
-      background-color: #b9974f;
-      color: #1a1a1a;
-      transform: translateY(-2px);
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+      color:#fff;
     }
 
-    /* Brochure */
+    /* Botón secundario (premium dark) */
     .btn-brochure{
-      background-color: var(--white);
-      color: var(--alt-black);
-      border: 2px solid rgba(27,27,27,.20);
-      font-weight: 700;
+      background: rgba(255,255,255,.04);
+      color: rgba(255,255,255,.90);
+      border: 1px solid rgba(255,255,255,.16);
+      font-weight: 900;
       padding: 12px;
       transition: all .25s ease;
     }
     .btn-brochure:hover{
-      border-color: var(--alt-gold);
-      color: var(--alt-gold);
+      background: rgba(255,255,255,.08);
+      border-color: rgba(198,169,107,.35);
+      color: rgba(255,235,200,.95);
+      transform: translateY(-1px);
     }
 
     /* Listas */
-    .feature-list li{margin-bottom: 12px; color: var(--alt-gray);}
-    .feature-list i{color: var(--alt-gold); margin-right: 10px;}
+    .feature-list li{ margin-bottom: 12px; color: var(--muted); }
+    .feature-list i{ color: var(--alt-gold); margin-right: 10px; }
+
+    .badge-status{
+      background: rgba(198,169,107,.16);
+      color: rgba(255,235,200,.95);
+      border: 1px solid rgba(198,169,107,.28);
+      font-weight: 900;
+    }
 
     /* Mapa hover */
-    .img-hover-container{position: relative; cursor: pointer;}
+    .img-hover-container{
+      position: relative;
+      cursor: pointer;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.10) !important;
+      background: rgba(255,255,255,.03);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+    }
     .img-hover-container img{
       min-height: 300px;
       object-fit: cover;
@@ -144,7 +228,7 @@
     .img-overlay{
       position:absolute;
       inset:0;
-      background: rgba(27,27,27,.55);
+      background: rgba(0,0,0,.70);
       display:flex;
       align-items:center;
       justify-content:center;
@@ -155,26 +239,29 @@
     .btn-maps{
       background-color: var(--google-blue);
       color: var(--white);
-      font-weight: 700;
+      font-weight: 900;
       border:none;
       transition: all .25s ease;
+      box-shadow: 0 12px 26px rgba(26,115,232,.22);
     }
     .btn-maps:hover{
       background-color:#0c5fd6;
-      transform: translateY(-2px);
+      transform: translateY(-1px);
       color: var(--white);
     }
     .img-hover-container:hover img{transform: scale(1.05);}
     .img-hover-container:hover .img-overlay{opacity:1;}
 
-    .title-altamira{ letter-spacing: .8px; }
-
-    .badge-status{
-      background: rgba(198,169,107,.16);
-      color:#7a6230;
-      border: 1px solid rgba(198,169,107,.35);
-      font-weight:800;
+    /* Footer (igual index) */
+    footer{
+      background:
+        radial-gradient(900px 420px at 20% 0%, rgba(122,92,255,.12), transparent 60%),
+        radial-gradient(900px 420px at 90% 10%, rgba(45,212,191,.08), transparent 60%),
+        #07060d !important;
+      border-top:1px solid rgba(255,255,255,.08);
     }
+    footer .text-white-50{ color: rgba(255,255,255,.64) !important; }
+    footer a.text-white-50:hover{ color: rgba(255,255,255,.90) !important; }
 
     /* ============================
        LAUNCH EFFECTS (overlay + fade general)
@@ -206,13 +293,16 @@
       overflow: hidden;
     }
 
+    /* Intro background (DARK) */
     .launch-intro__bg{
       position:absolute;
       inset:0;
       background:
         radial-gradient(900px 600px at 60% 10%, rgba(198,169,107,.18), transparent 60%),
-        radial-gradient(900px 700px at 20% 30%, rgba(0,0,0,.08), transparent 60%),
-        linear-gradient(180deg, #ffffff 0%, #fbfbfb 55%, #f7f7f7 100%);
+        radial-gradient(900px 700px at 20% 30%, rgba(122,92,255,.18), transparent 60%),
+        radial-gradient(900px 700px at 90% 30%, rgba(45,212,191,.10), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.02), transparent 45%),
+        var(--bg);
     }
 
     .launch-intro__canvas{
@@ -230,17 +320,18 @@
       right: 18px;
       border-radius: 999px;
       padding: 10px 14px;
-      font-weight: 800;
+      font-weight: 900;
       font-size: 12px;
       letter-spacing: .5px;
       text-transform: uppercase;
-      border: 1px solid rgba(27,27,27,.15);
-      background: rgba(255,255,255,.7);
-      color: rgba(27,27,27,.75);
-      transition: transform .2s ease;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.80);
+      transition: transform .2s ease, background .2s ease;
       z-index: 5;
+      backdrop-filter: blur(10px);
     }
-    .launch-intro__skip:hover{ transform: translateY(-1px); }
+    .launch-intro__skip:hover{ transform: translateY(-1px); background: rgba(255,255,255,.10); }
 
     .launch-intro__card{
       position: relative;
@@ -248,9 +339,9 @@
       padding: 28px 22px;
       border-radius: 22px;
       border: 1px solid rgba(198,169,107,.25);
-      background: rgba(255,255,255,.78);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 22px 70px rgba(0,0,0,.12);
+      background: rgba(255,255,255,.06);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 22px 70px rgba(0,0,0,.45);
       text-align: center;
       animation: introPop .9s ease both;
       z-index: 4;
@@ -262,41 +353,40 @@
       border-radius: 999px;
       background: rgba(198,169,107,.14);
       border: 1px solid rgba(198,169,107,.28);
-      color: #6b5428;
+      color: rgba(255,235,200,.95);
       font-weight: 900;
       letter-spacing: .5px;
       text-transform: uppercase;
       font-size: 12px;
     }
 
-    /* Texto ALTAMIRA SIN EFECTO DE FUEGO */
     .launch-intro__brand{
       margin: 16px auto 8px;
       font-weight: 900;
       font-size: clamp(42px, 6vw, 64px);
       letter-spacing: 12px;
       line-height: 1;
-      color: #222;
+      color: rgba(255,235,200,.98);
       text-transform: uppercase;
       text-shadow:
-        0 1px 0 rgba(255,255,255,.65),
-        0 8px 20px rgba(0,0,0,.08);
+        0 1px 0 rgba(255,255,255,.10),
+        0 10px 26px rgba(0,0,0,.55);
     }
 
     .launch-intro__sub{
       margin-top: 6px;
-      font-weight: 800;
+      font-weight: 900;
       letter-spacing: 2.4px;
       text-transform: uppercase;
       font-size: 12px;
-      color: rgba(27,27,27,.68);
+      color: rgba(255,255,255,.72);
     }
 
     .launch-intro__line{
       width: 140px;
       height: 2px;
       margin: 14px auto 12px;
-      background: linear-gradient(90deg, transparent, rgba(198,169,107,.8), transparent);
+      background: linear-gradient(90deg, transparent, rgba(198,169,107,.85), transparent);
     }
 
     .launch-intro__tag{
@@ -307,7 +397,7 @@
       text-transform: uppercase;
       letter-spacing: .7px;
       font-size: 12px;
-      color: rgba(27,27,27,.75);
+      color: rgba(255,255,255,.78);
     }
 
     .launch-intro.is-leaving{
@@ -318,21 +408,17 @@
       0%{ transform: translateY(14px) scale(.98); opacity: 0; }
       100%{ transform: translateY(0) scale(1); opacity: 1; }
     }
-
     @keyframes introFade{
       to{ opacity: 0; visibility: hidden; }
     }
 
-    /* ==============================
-       GOLD FLASH LOGO
-       ============================== */
+    /* GOLD FLASH LOGO */
     .navbar-brand.alt-launch-logo{
       position: relative;
       display: inline-block;
       overflow: hidden;
       border-radius: 10px;
     }
-
     .navbar-brand.alt-launch-logo::after{
       content:"";
       position:absolute;
@@ -349,16 +435,19 @@
       transform: skewX(-20deg);
       pointer-events:none;
     }
-
     .navbar-brand.alt-launch-logo.gold-flash::after{
       animation: goldSwipe 1.15s ease forwards;
     }
-
     @keyframes goldSwipe{
       0%{ left:-140%; }
       100%{ left:160%; }
     }
 
+    @media (max-width: 991px){
+      .navbar-nav .nav-link{ margin-left:0; padding: 10px 0; }
+      .property-carousel img{ height: 380px; }
+      .sidebar-card{ position: static; top:auto; }
+    }
     @media (max-width: 480px){
       .launch-intro__brand{ letter-spacing: 8px; font-size: 42px; }
     }
@@ -367,9 +456,7 @@
 
 <body>
 
-  <!-- =============================
-       LAUNCH INTRO (OVERLAY)
-       ============================= -->
+  <!-- LAUNCH INTRO -->
   <div id="launchIntro" class="launch-intro" aria-hidden="false">
     <div class="launch-intro__bg"></div>
 
@@ -377,10 +464,7 @@
 
     <div class="launch-intro__card">
       <div class="launch-intro__pill">Acceso privado</div>
-
-      <!-- ALTAMIRA SIN EFECTOS -->
       <div class="launch-intro__brand" aria-label="ALTAMIRA">ALTAMIRA</div>
-
       <div class="launch-intro__sub">Condominio privado</div>
       <div class="launch-intro__line"></div>
       <div class="launch-intro__tag">Lanzamiento</div>
@@ -441,7 +525,7 @@
                 <img src="imagenes/56.jpg" class="d-block w-100" alt="Altamira Vista 3">
               </div>
               <div class="carousel-item">
-                <img src="imagenes/57.webp" class="d-block w-100" alt="Altamira Vista 3">
+                <img src="imagenes/57.webp" class="d-block w-100" alt="Altamira Vista 4">
               </div>
             </div>
 
@@ -454,7 +538,7 @@
           </div>
 
           <div class="soft-card p-4 rounded mb-4">
-            <h3 class="fw-bold mb-4">Descripción</h3>
+            <h3 class="fw-bold mb-4" style="font-family:'Montserrat',sans-serif;">Descripción</h3>
             <p class="text-muted">
               ALTAMIRA es una <b>Colección Privada</b> de propiedades diseñada para brindar exclusividad,
               conexión con la naturaleza y una experiencia de vida superior.
@@ -465,8 +549,7 @@
             <div class="row mt-5">
               <div class="col-md-6 mb-4">
                 <h4 class="fw-bold h5 mb-3">
-                  <i class="fas fa-gem me-2" style="color: var(--alt-gold);"></i>
-                  Esencia
+                  <i class="fas fa-gem me-2" style="color: var(--alt-gold);"></i>Esencia
                 </h4>
                 <ul class="list-unstyled feature-list">
                   <li><i class="fas fa-check-circle"></i> Colección privada</li>
@@ -478,8 +561,7 @@
 
               <div class="col-md-6 mb-4">
                 <h4 class="fw-bold h5 mb-3">
-                  <i class="fas fa-leaf me-2" style="color: var(--alt-gold);"></i>
-                  Experiencia
+                  <i class="fas fa-leaf me-2" style="color: var(--alt-gold);"></i>Experiencia
                 </h4>
                 <ul class="list-unstyled feature-list">
                   <li><i class="fas fa-check-circle"></i> Naturaleza protagonista</li>
@@ -492,13 +574,13 @@
           </div>
 
           <div class="soft-card p-4 rounded">
-            <h3 class="fw-bold mb-4">Ubicación</h3>
+            <h3 class="fw-bold mb-4" style="font-family:'Montserrat',sans-serif;">Ubicación</h3>
             <p class="text-muted">
               Una ubicación pensada para privacidad y conexión.
               (Aquí colocas tu mapa real cuando lo tengas listo).
             </p>
 
-            <div class="img-hover-container rounded overflow-hidden shadow-sm border">
+            <div class="img-hover-container">
               <img src="imagenes/42.jpeg" class="img-fluid w-100" alt="Mapa de Ubicación Altamira">
               <div class="img-overlay">
                 <div class="overlay-content">
@@ -506,7 +588,6 @@
                   <h5 class="fw-bold mb-2">ALTAMIRA</h5>
                   <p class="mb-3">Colección Privada<br>Acceso limitado</p>
 
-                  <!-- MISMA PESTAÑA -->
                   <a href="" class="btn btn-maps rounded-pill px-4 py-2">
                     <i class="fas fa-map-marked-alt me-2"></i> Ver en Google Maps
                   </a>
@@ -523,7 +604,7 @@
 
         <div class="col-lg-4">
           <div class="sidebar-card">
-            <h4 class="fw-bold mb-4">Resumen</h4>
+            <h4 class="fw-bold mb-4" style="font-family:'Montserrat',sans-serif;">Resumen</h4>
 
             <ul class="list-group list-group-flush mb-4">
               <li class="list-group-item d-flex justify-content-between align-items-center px-0">
@@ -541,7 +622,6 @@
             </ul>
 
             <div class="d-grid gap-3">
-              <!-- MISMA PESTAÑA -->
               <a href="https://wa.link/f077ze" class="btn btn-whatsapp-prop py-3 rounded-pill">
                 <i class="fab fa-whatsapp fa-lg me-2"></i> Solicitar acceso
               </a>
@@ -551,7 +631,7 @@
               </a>
             </div>
 
-            <hr class="my-4">
+            <hr class="my-4" style="border-color:rgba(255,255,255,.10);">
             <p class="text-center text-muted small mb-0">
               <i class="fas fa-phone-alt me-2"></i> Llámanos: 929 307 776
             </p>
@@ -562,7 +642,7 @@
     </div>
   </section>
 
-  <footer id="contacto" class="text-white py-5" style="background-color: #1a1a1a;">
+  <footer id="contacto" class="text-white py-5">
     <div class="container">
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6">
